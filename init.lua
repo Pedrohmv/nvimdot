@@ -4,4 +4,5 @@ require("ph.telescope")
 require("ph.flutter")
 require("ph.lsp")
 require("lualine").setup()
-
+require("nvim-tree").setup()
+require("lazygit")

@@ -1,18 +1,14 @@
 local nmap = require("ph.keymap").nmap
 local vmap = require("ph.keymap").vmap
-local dartls = pcall(require, "flutter-tools")
 
-require("lspconfig").dartls.setup{
-    on_attach=function()
-        vim.cmd[[ LspStop 1 ]]
-        nmap { "K", vim.lsp.buf.hover, { buffer = 0 } }
-        nmap { "gd", vim.lsp.buf.definition, { buffer = 0 } }
-        nmap { "gr", vim.lsp.buf.references, { buffer = 0 } }
-        nmap { "<leader>rn", vim.lsp.buf.rename, { buffer = 0 } }
-        nmap { "<leader>aw", vim.lsp.buf.code_action, { buffer = 0 } }
-        vmap { "<leader>aw", vim.lsp.buf.range_code_action, { buffer = 0 } }
-    end,
-}
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+
+nmap { "K", vim.lsp.buf.hover }
+nmap { "gd", vim.lsp.buf.definition }
+nmap { "gr", vim.lsp.buf.references }
+nmap { "<leader>rn", vim.lsp.buf.rename }
+nmap { "<leader>aw", vim.lsp.buf.code_action }
+vmap { "<leader>aw", vim.lsp.buf.range_code_action }
 
 local diagnostics_active = true
 vim.keymap.set('n', '<leader>td', function()

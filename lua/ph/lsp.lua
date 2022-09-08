@@ -10,8 +10,11 @@ nmap { "<leader>rn", vim.lsp.buf.rename }
 nmap { "<leader>aw", vim.lsp.buf.code_action }
 vmap { "<leader>aw", vim.lsp.buf.range_code_action }
 
+nmap { "<leader>dn", vim.diagnostic.goto_next }
+nmap { "<leader>dp", vim.diagnostic.goto_prev }
+
 local diagnostics_active = true
-vim.keymap.set('n', '<leader>td', function()
+vim.keymap.set('n', '<leader>dd', function()
   diagnostics_active = not diagnostics_active
   if diagnostics_active then
     vim.diagnostic.show()

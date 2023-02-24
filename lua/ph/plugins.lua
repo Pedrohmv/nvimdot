@@ -3,6 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'morhetz/gruvbox'
+  use 'arturgoms/moonbow.nvim'
   use 'nvim-lua/plenary.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -36,4 +37,7 @@ return require('packer').startup(function(use)
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
+  use 'williamboman/mason.nvim'    
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'simrat39/rust-tools.nvim'
 end)

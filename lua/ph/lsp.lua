@@ -1,14 +1,20 @@
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+-- move to rust.lua
+local rt = require("rust-tools")
+rt.setup()
+
 local nmap = require("ph.keymap").nmap
 local vmap = require("ph.keymap").vmap
 
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 nmap { "K", vim.lsp.buf.hover }
 nmap { "gd", vim.lsp.buf.definition }
 nmap { "gr", vim.lsp.buf.references }
 nmap { "<leader>rn", vim.lsp.buf.rename }
 nmap { "<leader>aw", vim.lsp.buf.code_action }
-vmap { "<leader>aw", vim.lsp.buf.range_code_action }
 
 nmap { "<leader>dn", vim.diagnostic.goto_next }
 nmap { "<leader>dp", vim.diagnostic.goto_prev }

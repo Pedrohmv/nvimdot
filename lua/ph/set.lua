@@ -1,3 +1,5 @@
+local nmap = require("ph.keymap").nmap
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -14,3 +16,6 @@ vim.opt.wrap = false
 vim.g.noswapfile = true
 
 vim.g.mapleader = " "
+
+nmap { "<Right>", "<cmd>bn<CR>" }
+nmap { "<Left>", "<cmd>bp<CR>" }

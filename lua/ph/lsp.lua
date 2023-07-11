@@ -60,3 +60,7 @@ cmp.setup({
 require("lspconfig").tsserver.setup{
   filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" }
 }
+
+require("lspconfig").cssls.setup{
+  filetypes = {"css"}
+}

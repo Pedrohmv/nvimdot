@@ -14,6 +14,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.smartindent = true 
 vim.opt.wrap = false
 vim.g.noswapfile = true
+vim.opt.swapfile = false
 
 vim.g.mapleader = " "
 

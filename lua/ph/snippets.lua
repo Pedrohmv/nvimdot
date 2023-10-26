@@ -47,12 +47,6 @@ ls.add_snippets("typescriptreact", {
       i(1, "state"),
       f(function(args)
         local name = args[1][1]
-        local first = string.upper(string.sub(name, 1, 1))
-        local rest = string.sub(name, 2, -1)
-        return "set" .. first .. rest
-      end, { 1 }),
-      f(function(args)
-        local name = args[1][1]
         return name .. "State"
       end, { 1 }),
     })
@@ -63,12 +57,6 @@ ls.add_snippets("typescriptreact", {
       i(1, "state"),
       f(function(args)
         local name = args[1][1]
-        local first = string.upper(string.sub(name, 1, 1))
-        local rest = string.sub(name, 2, -1)
-        return "set" .. first .. rest
-      end, { 1 }),
-      f(function(args)
-        local name = args[1][1]
         return name .. "State"
       end, { 1 }),
     })
@@ -77,6 +65,8 @@ ls.add_snippets("typescriptreact", {
     "fcc",
     fmt(
       [[
+            import React from 'react';
+
             export interface {}Props {{}}
 
             export function {} (props: {}Props): JSX.Element{{
@@ -86,9 +76,15 @@ ls.add_snippets("typescriptreact", {
             }}
     ]],
       {
-        filename(),
-        filename(),
-        filename(),
+        i(1, "Component"),
+        f(function(args)
+          local name = args[1][1]
+          return name
+        end, { 1 }),
+        f(function(args)
+          local name = args[1][1]
+          return name
+        end, { 1 }),
       }
     )
   ),

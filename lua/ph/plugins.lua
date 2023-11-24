@@ -47,10 +47,5 @@ return require('packer').startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'simrat39/rust-tools.nvim'
-  use {
-    "nvim-neorg/neorg",
-    run = ":Neorg sync-parsers",
-    requires = "nvim-lua/plenary.nvim",
-  }
   use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' }
 end)

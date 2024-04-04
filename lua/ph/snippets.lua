@@ -69,7 +69,7 @@ ls.add_snippets("typescriptreact", {
 
             export interface {}Props {{}}
 
-            export function {} (props: {}Props): JSX.Element{{
+            export function {}(props: {}Props): JSX.Element{{
               return(
                 <div></div>
               )

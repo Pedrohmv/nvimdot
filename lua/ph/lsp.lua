@@ -59,6 +59,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'pylsp' },
   }, {
     { name = 'buffer' },
   })
@@ -79,5 +80,9 @@ require("lspconfig").lua_ls.setup {
 }
 
 require("lspconfig").tailwindcss.setup {
+  capabilities = capabilities,
+}
+
+require("lspconfig").pylsp.setup {
   capabilities = capabilities,
 }

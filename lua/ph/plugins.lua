@@ -48,4 +48,5 @@ return require('packer').startup(function(use)
   use 'williamboman/mason-lspconfig.nvim'
   use 'simrat39/rust-tools.nvim'
   use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' }
+  use 'github/copilot.vim'
 end)

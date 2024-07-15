@@ -16,9 +16,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("ph.set")
-vim.keymap.set('n', '<leader>ff', "<cmd>Telescope find_files<cr>", {})
-vim.keymap.set('n', '<leader>fg', "<cmd>Telescope live_grep<cr>", {})
-vim.keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<cr>", {})
 
 require("lazy").setup({
   spec = {
@@ -27,3 +24,10 @@ require("lazy").setup({
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
 })
+
+vim.keymap.set('n', '<leader>ff', "<cmd>Telescope find_files<cr>", {})
+vim.keymap.set('n', '<leader>fg', "<cmd>Telescope live_grep<cr>", {})
+vim.keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<cr>", {})
+vim.keymap.set('n', "<leader>gg", "<cmd>LazyGit<CR>", {})
+
+require("config.lsp")

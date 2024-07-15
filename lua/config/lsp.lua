@@ -1,8 +1,20 @@
-
 local nmap = require("ph.keymap").nmap
 local vmap = require("ph.keymap").vmap
 
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+local au = vim.api.nvim_create_autocmd
+local ag = vim.api.nvim_create_augroup
+local clear_au = vim.api.nvim_clear_autocmds
+
+-- Autoformat on save
+local augroup = ag("LspFormatting", { clear = false })
+au("BufWritePre", {
+  clear_au({ group = augroup, buffer = bufnr }),
+  group = augroup,
+  buffer = bufnr,
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.ts,*.tsx,*.js,*.jsx,*.rs,*.css,*.html,*.json,*.scss,*.xml",
@@ -76,5 +88,9 @@ require("lspconfig").tailwindcss.setup {
 }
 
 require("lspconfig").pylsp.setup {
+  capabilities = capabilities,
+}
+
+require("lspconfig").rust_analyzer.setup {
   capabilities = capabilities,
 }

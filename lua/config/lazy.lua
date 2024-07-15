@@ -31,3 +31,4 @@ vim.keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<cr>", {})
 vim.keymap.set('n', "<leader>gg", "<cmd>LazyGit<CR>", {})
 
 require("config.lsp")
+require("config.snippets")

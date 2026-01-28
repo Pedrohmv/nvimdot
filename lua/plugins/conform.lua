@@ -33,7 +33,8 @@ return {
 			graphql = { "prettierd" },
 			lua = { "stylua" },
 			python = { "isort", "black" },
-			odin = { "ols" },
+			odin = { "odinfmt" },
+			dart = { "dartls" },
 		},
 		-- Set default options
 		default_format_opts = {
@@ -45,6 +46,11 @@ return {
 		formatters = {
 			shfmt = {
 				prepend_args = { "-i", "2" },
+			},
+			odinfmt = {
+				command = "odinfmt",
+				args = { "-stdin" },
+				stdin = true,
 			},
 		},
 	},

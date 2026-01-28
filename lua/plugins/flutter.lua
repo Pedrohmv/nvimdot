@@ -5,9 +5,5 @@ return {
 		"nvim-lua/plenary.nvim",
 		"stevearc/dressing.nvim",
 	},
-	config = function()
-		require("flutter-tools").setup({
-			fvm = true,
-		})
-	end,
+	config = true,
 }

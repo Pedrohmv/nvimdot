@@ -52,5 +52,9 @@ vim.keymap.set("n", "<leader>dd", function()
 	end
 end)
 
+require("flutter-tools").setup({
+	fvm = true,
+})
+
 --require("config.lsp")
 --require("config.snippets")

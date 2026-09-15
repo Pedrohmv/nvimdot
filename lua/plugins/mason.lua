@@ -8,7 +8,17 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
-			require("mason-lspconfig").setup()
+			require("mason-lspconfig").setup({
+				-- Installed servers are auto-enabled via vim.lsp.enable() (automatic_enable defaults to true)
+				ensure_installed = {
+					"vtsls",
+					"eslint",
+					"jsonls",
+					"yamlls",
+					"tailwindcss",
+					"lua_ls",
+				},
+			})
 		end,
 	},
 	{

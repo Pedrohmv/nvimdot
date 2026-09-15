@@ -52,6 +52,9 @@ vim.keymap.set("n", "<leader>dd", function()
 	end
 end)
 
+-- Nvim 0.12 ships a native :lsp command, so nvim-lspconfig no longer defines :LspInfo
+vim.api.nvim_create_user_command("LspInfo", "checkhealth vim.lsp", { desc = "Alias to :checkhealth vim.lsp" })
+
 require("flutter-tools").setup({
 	fvm = true,
 })
